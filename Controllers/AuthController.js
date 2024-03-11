@@ -35,7 +35,7 @@ module.exports.Login = async (email, password) => {
 
       }
        const token = createSecretToken(user._id);
-      //  console.log(user)
+       console.log(user)  
       data={keyAndSecretExist:false,isAccessTokenGenerated:false, key:""}
        if(user.key && user.secret && user.lastTokenGeneratedAt){
         data.keyAndSecretExist=true
