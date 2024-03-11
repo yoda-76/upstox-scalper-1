@@ -49,7 +49,7 @@ app.get("/",(req,res)=>{
 })
 
 
-app.use("/", authRoute);
+// app.use("/", authRoute);
 app.use("/profile", profile);
 app.use("/console", tradingConsole);
 
