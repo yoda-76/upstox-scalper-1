@@ -60,39 +60,39 @@ server.listen(PORT, () => {
 
 //.................................................................................
 
-const socketio = require('socket.io');
-const io = socketio(server, {
-  cors: {
-    origin: ["http://localhost:5173","http://127.0.0.1:5173"],  // Adjust the origin to match your React app's URL
-    methods: ["GET", "POST"],
-  },
-});
-const User = require("./Models/UserModel");
-// const { userVerification } = require("./Middlewares/AuthMiddleware");
+// const socketio = require('socket.io');
+// const io = socketio(server, {
+//   cors: {
+//     origin: ["http://localhost:5173","http://127.0.0.1:5173"],  // Adjust the origin to match your React app's URL
+//     methods: ["GET", "POST"],
+//   },
+// });
+// const User = require("./Models/UserModel");
+// // const { userVerification } = require("./Middlewares/AuthMiddleware");
 
-io.on('connection', async (socket) => {
+// io.on('connection', async (socket) => {
   
-//.....................................................................................
-  console.log(`Socket ${socket.id} connected`);
-  const interval=setInterval(()=>{
-    console.log("hi")  
-    io.emit('message',"hi")
-  },1000)
+// //.....................................................................................
+//   console.log(`Socket ${socket.id} connected`);
+//   const interval=setInterval(()=>{
+//     console.log("hi")  
+//     io.emit('message',"hi")
+//   },1000)
 
 
-  socket.on('sendMessage', (message) => {
-    io.emit('message', message);
-  });
-  socket.on('message', (message) => {
-    console.log(message)
-    io.emit('message',message)
-  });
-  socket.on('disconnect', () => {
-    console.log(`Socket ${socket.id} disconnected`);
-    clearInterval(interval)
-  });
-});
-.................................................................................
+//   socket.on('sendMessage', (message) => {
+//     io.emit('message', message);
+//   });
+//   socket.on('message', (message) => {
+//     console.log(message)
+//     io.emit('message',message)
+//   });
+//   socket.on('disconnect', () => {
+//     console.log(`Socket ${socket.id} disconnected`);
+//     clearInterval(interval)
+//   });
+// });
+//.................................................................................
 
 
 
