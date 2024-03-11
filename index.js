@@ -54,7 +54,7 @@ app.use("/profile", profile);
 app.use("/console", tradingConsole);
 
 
-server.listen(PORT,'127.0.0.1', () => {
+server.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
