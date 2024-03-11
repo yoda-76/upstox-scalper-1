@@ -36,8 +36,9 @@ module.exports.Login = async (email, password) => {
       }
        const token = createSecretToken(user._id);
       //  console.log(user)
+      data={keyAndSecretExist:false,isAccessTokenGenerated:false, key:""}
        if(user.key && user.secret && user.lastTokenGeneratedAt){
-        data={keyAndSecretExist:true,isAccessTokenGenerated:false, key:""}
+        data.keyAndSecretExist=true
         const dateParts = user.lastTokenGeneratedAt.split(', ')[0].split('/');
         const isoDateString = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
         const parsedDate = new Date(isoDateString);
@@ -50,8 +51,8 @@ module.exports.Login = async (email, password) => {
         }
         data.key=user.key
         console.log(data)
-        return {token,data}
-      } return {token}
+      } 
+      return {token,data}
   }
 
 
