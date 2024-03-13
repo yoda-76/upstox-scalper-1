@@ -21,7 +21,7 @@ module.exports.GetAccessToken = async (email,authcode) => {
     code: authcode,
     client_id: user.key,
     client_secret: user.secret,
-    redirect_uri: 'http://localhost:4000/auth',
+    redirect_uri: 'https://projectsbyyoda.xyz/auth',
     grant_type: 'authorization_code',
 }), {
       headers: {
