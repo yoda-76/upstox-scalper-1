@@ -115,7 +115,7 @@ io.on('connection', async (socket) => {
     // Import required modules
   const fs = require('fs');
   const path = require('path');
-  const folderPath = path.join(__dirname, '../token_data');
+  const folderPath = path.join(__dirname, 'token_data');
   const jsonFilePath2 = path.join(folderPath, 'instrument_keys_data.json');
   const upstoxFeedDataPath = path.join(folderPath, 'upstoxFeed.json');
   let keysData;
