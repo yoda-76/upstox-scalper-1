@@ -187,6 +187,7 @@ io.on('connection', async (socket) => {
             },
           };
           ws.send(Buffer.from(JSON.stringify(data)));
+          console.log(JSON.stringify(data))
 
         }, 1000);
       });
