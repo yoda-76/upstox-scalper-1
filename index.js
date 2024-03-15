@@ -101,7 +101,7 @@ const WebSocket = require("ws"); // Require the WebSocket library
 const socketio = require('socket.io');
 const io = socketio(server, {
   cors: {
-    origin: ["http://localhost:5173","http://127.0.0.1:5173"],  // Adjust the origin to match your React app's URL
+    origin: ["http://localhost:5173","http://127.0.0.1:5173","https://upstox-scalper-2.vercel.app/"],  // Adjust the origin to match your React app's URL
     methods: ["GET", "POST"],
   },
 });
@@ -119,7 +119,7 @@ io.on('connection', async (socket) => {
   const jsonFilePath2 = path.join(folderPath, 'instrument_keys_data.json');
   const upstoxFeedDataPath = path.join(folderPath, 'upstoxFeed.json');
   let keysData;
-  fs.readFile(jsonFilePath2, 'utf8', (err, data) => {
+  fs.readFile(jsonFilePath2, 'utf8', (err, data) => { 
       if (err) {
         console.error('Error reading the file:', err);
         return;
