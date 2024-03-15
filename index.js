@@ -25,7 +25,7 @@ mongoose
   
   app.use(
   cors({
-    origin: ["http://127.0.0.1:5174","http://127.0.0.1:5173"],
+    origin: ["http://127.0.0.1:5174","http://127.0.0.1:5173","https://upstox-scalper-2.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
